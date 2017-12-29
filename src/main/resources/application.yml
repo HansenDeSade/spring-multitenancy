@@ -1,0 +1,18 @@
+security.basic.enabled: true
+spring:
+  multitenancy:
+    localhost:
+      url: jdbc:jtds:sqlserver://localhost/p360_ks
+      username: p360_dbo
+      password: p360pass
+      driver-class-name: net.sourceforge.jtds.jdbc.Driver
+    schneider:
+      url: jdbc:jtds:sqlserver://PUMA/p360_ks;instance=SCHNEIDER
+      username: p360_dbo
+      password: p360pass
+      driver-class-name: net.sourceforge.jtds.jdbc.Driver
+    popken:
+      url: jdbc:jtds:sqlserver://PUMA/p360_ks;instance=POPKEN
+      username: p360_dbo
+      password: p360pass
+      driver-class-name: net.sourceforge.jtds.jdbc.Driver
