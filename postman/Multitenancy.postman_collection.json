@@ -1,0 +1,123 @@
+{
+	"info": {
+		"name": "Multitenancy",
+		"_postman_id": "9c2cf225-dbb0-e5b9-3949-a6235358127b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication userA",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"userA\",\n  \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userA, who's linked to h2 database \"tenant1\""
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication userB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"userB\",\n  \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userB, who's linked to h2 database \"tenant2\""
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication userC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"userC\",\n  \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userC, who's linked to h2 database \"tenant3\""
+			},
+			"response": []
+		},
+		{
+			"name": "Service Call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQSIsImV4cCI6MTUxODk3Nzg4OCwiaXNzIjoiTXVsdGl0ZW5hbmN5IG51bGwiLCJpYXQiOjE1MTg4OTE0ODgsImF1ZCI6InRlbmFudDEifQ.nwTEFXEeCwfh3wBkiyDanfIYSMTCcWoGgEiNRLocXc0M17QFbeD_VjWkA1p855g-WZGN0t1UvLAd_tDlsIscHw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tenantinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tenantinfo"
+					]
+				},
+				"description": "Calls the example REST-service authorizing itself with a JWT-Token (see header)"
+			},
+			"response": []
+		}
+	]
+}
