@@ -1,18 +1,21 @@
 security.basic.enabled: true
 spring:
+  h2.console:
+    enabled: true
+    path: /h2
   multitenancy:
-    localhost:
-      url: jdbc:jtds:sqlserver://localhost/p360_ks
-      username: p360_dbo
-      password: p360pass
-      driver-class-name: net.sourceforge.jtds.jdbc.Driver
-    schneider:
-      url: jdbc:jtds:sqlserver://PUMA/p360_ks;instance=SCHNEIDER
-      username: p360_dbo
-      password: p360pass
-      driver-class-name: net.sourceforge.jtds.jdbc.Driver
-    popken:
-      url: jdbc:jtds:sqlserver://PUMA/p360_ks;instance=POPKEN
-      username: p360_dbo
-      password: p360pass
-      driver-class-name: net.sourceforge.jtds.jdbc.Driver
+    tenant1:
+      url: jdbc:h2:file:~/tenant1;INIT=runscript from 'classpath:sql/tenant1/init.sql'
+      username: sa
+      password: k123
+      driver-class-name: org.h2.Driver
+    tenant2:
+      url: jdbc:h2:file:~/tenant2;INIT=runscript from 'classpath:sql/tenant2/init.sql'
+      username: sa
+      password: k123
+      driver-class-name: org.h2.Driver
+    tenant3:
+      url: jdbc:h2:file:~/tenant3;INIT=runscript from 'classpath:sql/tenant3/init.sql'
+      username: sa
+      password: k123
+      driver-class-name: org.h2.Driver
