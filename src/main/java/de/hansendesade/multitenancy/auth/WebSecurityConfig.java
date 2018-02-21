@@ -25,7 +25,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableConfigurationProperties(JwtSecurityProperties.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  @Value("${security.basic.enabled}")
+  @Value("${security.basic.enabled:true}")
   private boolean securityEnabled;
 
   @Autowired

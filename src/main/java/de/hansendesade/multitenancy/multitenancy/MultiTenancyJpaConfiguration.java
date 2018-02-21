@@ -48,6 +48,7 @@ public class MultiTenancyJpaConfiguration {
         hibernateProps.put(Environment.MULTI_TENANT_CONNECTION_PROVIDER, multiTenantConnectionProvider);
         hibernateProps.put(Environment.MULTI_TENANT_IDENTIFIER_RESOLVER, currentTenantIdentifierResolver);
         hibernateProps.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
+        hibernateProps.put(Environment.HBM2DDL_AUTO, "none");
 
         return builder.dataSource(dataSource).packages(ExternalSystem.class.getPackage().getName()).properties(hibernateProps).jta(false).build();
     }
