@@ -1,124 +1,121 @@
 {
-	"variables": [],
 	"info": {
-		"name": "multitenancy prototype",
-		"_postman_id": "63ec500f-5658-030d-0fc0-715bb0412454",
-		"description": "kann nach Fehleranalyse wieder weg",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"name": "Multitenancy",
+		"_postman_id": "9c2cf225-dbb0-e5b9-3949-a6235358127b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Schneider",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
-							"",
-							"tests[\"Body is correct\"] = responseBody === \"360-360Connect, 25-ADAC_EinShop_Laden, 375-adadsasdasa, 366-AH_2nd_Shop, 367-AH_Next, 365-AHRecordingPerformingProducing, 17-Amazon  Haushalt u. Garten, 18-Amazon Beleuchtung, 19-Amazon Elektronik, 44-Bertelsmann, 12-bertelsmann_ch, 37-buecher_de, 13-butlers, 4-CALLC_DB_HSFFO, 3-CALLC_DB_HSPASEWALK, 2-CALLC_DB_HSWEDEL, 22-Ebay_DE, 373-Emerald_Nightmare, 362-fewfewq, 370-FuturERS, 363-Hans-Test, 16-Hugendubel, 32-Hyper_Mega_Shop, 35-LeADAC_Test, 36-LeMein_Shop, 29-Mein_Paket_Powershop, 372-Mein_schoener_Garten_Shop, 31-Mein_Shop, 15-MeinPaket.de, 30-MeinSuperShop, 45-Minime, 43-NECKERMANN, 5-neckermann.de, 38-neckermann_at, 33-Neuer_Hyper_Mega_Shop, 24-OttoOffice_DE, 1-P360, 21-Partner_Shop, 41-partner_shop_conleys_de, 40-partner_shop_discovery_de, 42-partner_shop_impressionen_de, 364-PIMPraemie, 14-plus, 39-quelle, 34-RC_Kocht, 11-robinBook_ch, 8-schlecker_direkt, 20-schlecker_jit, 361-sdv, 27-shop_3, 26-shop2, 28-shop4, 23-Strauss_DE, 369-Test, 371-TestShop, 46-TestUwe, 368-tteessstrrr, 374-USA, 376-Webshop, 7-weltbild_online, 6-Xplain, 9-zeilenreich, 10-zeilenreich_de\";"
-						]
-					}
-				}
-			],
+			"name": "Authentication userA",
 			"request": {
-				"url": "http://localhost:8080/externalsystem",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQSIsImV4cCI6MTUxNDYyODM0NiwiaXNzIjoiTXVsdGl0ZW5hbmN5IG51bGwiLCJpYXQiOjE1MTQ1NDE5NDYsImF1ZCI6InNjaG5laWRlciJ9.Cd9WJPRdUXcO5jT_Pp75ejZK_OHlZsFM7FGM33LbTxNHILbxi2a6W5I6xGBQ_6C7AvWiLE6W8cILX_2yPEn7AA",
-						"description": ""
-					}
-				],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Popken",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
-							"",
-							"tests[\"Body is correct\"] = responseBody === \"0-360Connect, 100-EXSYS, 2-FuturERS, 101-USA_KANADA, 1-Webshop\";"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/externalsystem",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQSIsImV4cCI6MTUxNDYyODM5MywiaXNzIjoiTXVsdGl0ZW5hbmN5IG51bGwiLCJpYXQiOjE1MTQ1NDE5OTMsImF1ZCI6InBvcGtlbiJ9.eBjsewoRcQA_vc6C1OUtddlRpeBnzGzy3Dti8haKc1fCfDIX2WeXd0JR0Z1m-LYVochaNZ4u8YR1hK6ydfMjbQ",
-						"description": ""
-					}
-				],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "localhost",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
-							"",
-							"tests[\"Body is correct\"] = responseBody === \"360-360Connect, 2-EXT_1, 4-Test, 3-Testshop, 1-Webshop\";"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "http://localhost:8080/externalsystem",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQSIsImV4cCI6MTUxNDYyODQ1MCwiaXNzIjoiTXVsdGl0ZW5hbmN5IG51bGwiLCJpYXQiOjE1MTQ1NDIwNTAsImF1ZCI6ImxvY2FsaG9zdCJ9.9xG9He68WAEs0djrqrAhjVcEybnT6ZwLk-T-DncekclbWJRF6V6NXS_ixfbQuvxndJCeraT4xyD1Afprxf_NuA",
-						"description": ""
-					}
-				],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Authentication",
-			"request": {
-				"url": "http://localhost:8080/authenticate",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "tenantid",
-						"value": "schneider",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"userA\",\n\t\"password\": \"test\"\n}"
+					"raw": "{\n  \"username\": \"userA\",\n  \"password\": \"test\"\n}"
 				},
-				"description": "possible tenantid's at the moment are: schneider, popken, localhost"
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userA, who's linked to h2 database \"tenant1\""
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication userB",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"userB\",\n  \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userB, who's linked to h2 database \"tenant2\""
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication userC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"userC\",\n  \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				},
+				"description": "Requests a JWT-Token for userC, who's linked to h2 database \"tenant3\""
+			},
+			"response": []
+		},
+		{
+			"name": "Service Call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyQSIsImV4cCI6MTUxODk3Nzg4OCwiaXNzIjoiTXVsdGl0ZW5hbmN5IG51bGwiLCJpYXQiOjE1MTg4OTE0ODgsImF1ZCI6InRlbmFudDEifQ.nwTEFXEeCwfh3wBkiyDanfIYSMTCcWoGgEiNRLocXc0M17QFbeD_VjWkA1p855g-WZGN0t1UvLAd_tDlsIscHw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/tenantinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tenantinfo"
+					]
+				},
+				"description": "Calls the example REST-service authorizing itself with a JWT-Token (see header)"
 			},
 			"response": []
 		}
